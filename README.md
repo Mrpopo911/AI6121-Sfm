@@ -116,10 +116,11 @@ We did not call any function that implements SfM. Library functions are used onl
 ## Team
  
 <!-- TODO: names (matric numbers are in the report, not needed here) -->
-Pratham Pal Gandhi
+Members
 |--|
-Harini B
-Hari B
+GANDHI PRATHAM PAL G2609842H
+BALAMURUGAN HARINI G2609188A
+BALASUBRAMANIAN HARIHARAN G2610112K
  
 ## References
  
