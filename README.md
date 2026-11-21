@@ -39,6 +39,18 @@ The photos themselves are not stored in this repository <!-- TODO: or say where 
 5. **Registration:** next photo = the one seeing most points; PnP with RANSAC; flat-wall, neighbour-rotation and capture-order checks; new-point triangulation and outlier removal.
 6. **Bundle adjustment:** `scipy.optimize.least_squares` with a sparse Jacobian and Huber loss; local BA after each photo, then global BA with focal-length refinement.
 7. **Post-processing and output:** upright frame, coloured PLY point cloud, camera poses, CSV tables and figures.
+
+## Data
+
+The photos and the saved intermediate results are in a shared Google Drive folder, not in this repo:
+
+**[Download / copy the data folder]((https://drive.google.com/drive/folders/1QnUE3rwkOHMiHfmdDlIAV5TpwK9iHikq?usp=sharing))**
+
+1. Open the link and copy the folder `AI6121_SfM` to your own Drive, so that it sits at `My Drive/AI6121_SfM`
+   (right-click the folder, "Make a copy", then move the copy to My Drive and rename it if needed).
+2. It contains `input_images.zip` (tower photos), `set2.zip` (pillar photos) and `SfM_backup/` (saved Stage 3-4 results, lets you skip the 10-minute matching stage).
+3. Open a notebook in Colab, choose **Run all**, and approve the Drive permission.
+
 ## How to run (Google Colab)
  
 1. Put the photos in Google Drive in the folder `My Drive/AI6121_SfM/`:
