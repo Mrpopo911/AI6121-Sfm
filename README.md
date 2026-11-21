@@ -75,9 +75,14 @@ The pipeline runs on a standard Colab CPU runtime; no GPU is needed.
 |---|---|
 | ![](imgcl_056.jpg) | ![](img_001.jpeg) |
 ### Reconstructions
-| Closer | Normal |
-|---|---|
-| ![](imgcl_056.jpg) | ![](img_001.jpeg) |
+
+**Closer set**
+
+<img src="closer_views.png" width="700">
+
+**Normal set**
+
+<img src="normal_views.png" width="700">
 ## What we implemented and what we called
  
 We did not call any function that implements SfM. Library functions are used only as generic building blocks: OpenCV (`SIFT_create`, `BFMatcher`, `findFundamentalMat`, `findEssentialMat`, `solvePnPRansac`, `grabCut`, ...) and SciPy (`least_squares`, sparse matrices, rotations). The full list is in Section 2.5 of the report. The two-view pose selection, triangulation, view ordering, registration checks, track building and the bundle-adjustment residuals and schedule are our own code.
