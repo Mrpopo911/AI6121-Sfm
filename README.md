@@ -1,12 +1,26 @@
 # Structure from Motion on an NTU campus tower (AI6121)
  
 An incremental structure-from-motion (SfM) pipeline written step by step in Python (OpenCV, NumPy, SciPy), run in Google Colab. It reconstructs a coloured sparse point cloud and the camera poses of a campus tower from our own smartphone photos, refines them with bundle adjustment, and is benchmarked against COLMAP. A second scene (the CCDS signage pillar) tests whether the pipeline generalises.
- 
+|--|
+Main 
 [![Open main project in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mrpopo911/AI6121-Sfm/blob/main/AI6121_SfM_project.ipynb)
-
+||
+Generalization 
 [![Open generalization notebook in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mrpopo911/AI6121-Sfm/blob/main/AI6121_SfM_generalization_test.ipynb)
 
- 
+ ## Pipeline
+
+<img src="pipeline_diagram.png" width="900">
+
+*End-to-end overview. Solid boxes are the reconstruction pipeline; dashed boxes are the SOM pair-selection side experiment and the COLMAP benchmark, which are not part of it.*
+
+1. **Preprocessing (stages 1-2):** quality check (blur, exposure, clipping, near-duplicates), undistortion with a shared intrinsic matrix (f = 1126.75 px), CLAHE contrast normalisation.
+2. **Features (stage 3):** GrabCut building mask, RootSIFT keypoints (SIFT and ORB were compared; see the report).
+3. **Matching and tracks (stage 4):** ratio test plus mutual check, fundamental-matrix RANSAC verification, a stricter rule for far-apart pairs (the tower's four sides look alike), match graph and tracks.
+4. **Initialisation (stage 5):** essential matrix, our own pose selection and DLT triangulation, best of ten candidate start pairs.
+5. **Incremental growth (stage 6):** next photo = the one seeing most points; PnP with RANSAC; flat-wall, neighbour-rotation and capture-order checks; new-point triangulation, outlier removal and a local bundle adjustment after each photo.
+6. **Final refinement (stage 7):** global bundle adjustment, outlier removal, a second global BA that also refines the focal length, and an upright frame.
+7. **Output:** coloured PLY point cloud, camera poses, CSV tables and figures.
 ## Results at a glance
  
 | Scene | Photos | Cameras registered | 3D points | Mean reprojection error (after BA) | Agreement with COLMAP |
@@ -96,15 +110,16 @@ We did not call any function that implements SfM. Library functions are used onl
 ## Use of generative AI and external tools
  
 <!-- TODO: make this match the declaration in the report exactly -->
-* Generative AI (Claude, Anthropic) was used for [TEAM: confirm] writing and debugging parts of the notebook code and drafting the report. All code was run and checked by the team.
+* Generative AI (Claude, Anthropic) was used for writing and debugging parts of the notebook code and drafting the report. All code was run and checked by the team.
 * COLMAP / pycolmap: used only as an external reference (starting focal length and the benchmark), not inside the pipeline.
 * Libraries: OpenCV, NumPy, SciPy, pandas, Matplotlib.
 ## Team
  
 <!-- TODO: names (matric numbers are in the report, not needed here) -->
-Pratham
-Harini
-Hari
+Pratham Pal Gandhi
+|--|
+Harini B
+Hari B
  
 ## References
  
