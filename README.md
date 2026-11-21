@@ -70,13 +70,14 @@ The generalisation notebook also has `USE_MASK` and `LOOP_FLAGS` (closed ring or
  
 4. Results are written to the same Drive folder: `SfM_stage6/` (models, point clouds, tables), `figures/`, `som_addon/`, and the CSV reports (`ba_comparison.csv`, `parameter_tests.csv`, `feature_comparison.csv`, `colmap_comparison.csv`).
 The pipeline runs on a standard Colab CPU runtime; no GPU is needed.
+## Structure
+| Closer | Normal |
+|---|---|
+| ![](imgcl_056.jpg) | ![](img_001.jpeg) |
 ### Reconstructions
-
-![Tower, Closer set: top, front and side views of the sparse cloud with camera positions](figures/closer_views.png)
-
-![Tower, Normal set](figures/normal_views.png)
-
-![Pillar: zoom around the camera ring](figures/pillar_zoom.png)
+| Closer | Normal |
+|---|---|
+| ![](imgcl_056.jpg) | ![](img_001.jpeg) |
 ## What we implemented and what we called
  
 We did not call any function that implements SfM. Library functions are used only as generic building blocks: OpenCV (`SIFT_create`, `BFMatcher`, `findFundamentalMat`, `findEssentialMat`, `solvePnPRansac`, `grabCut`, ...) and SciPy (`least_squares`, sparse matrices, rotations). The full list is in Section 2.5 of the report. The two-view pose selection, triangulation, view ordering, registration checks, track building and the bundle-adjustment residuals and schedule are our own code.
