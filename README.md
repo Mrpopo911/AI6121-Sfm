@@ -44,7 +44,7 @@ The photos themselves are not stored in this repository <!-- TODO: or say where 
 
 The photos and the saved intermediate results are in a shared Google Drive folder, not in this repo:
 
-**[Download / copy the data folder]((https://drive.google.com/drive/folders/1QnUE3rwkOHMiHfmdDlIAV5TpwK9iHikq?usp=sharing))**
+**[Download / copy the data folder](https://drive.google.com/drive/folders/1QnUE3rwkOHMiHfmdDlIAV5TpwK9iHikq?usp=sharing)**
 
 1. Open the link and copy the folder `AI6121_SfM` to your own Drive, so that it sits at `My Drive/AI6121_SfM`
    (right-click the folder, "Make a copy", then move the copy to My Drive and rename it if needed).
