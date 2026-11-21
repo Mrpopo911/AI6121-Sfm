@@ -5,7 +5,7 @@ An incremental structure-from-motion (SfM) pipeline written step by step in Pyth
 [![Open main project in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mrpopo911/AI6121-Sfm/blob/main/AI6121_SfM_project.ipynb)
 
 [![Open generalization notebook in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mrpopo911/AI6121-Sfm/blob/main/AI6121_SfM_generalization_test.ipynb)
-> Course project for AI6121, NTU. Report: `AI6121_SfM_Report.pdf` <!-- TODO: add the final report PDF to the repo -->
+
  
 ## Results at a glance
  
@@ -78,7 +78,9 @@ We did not call any function that implements SfM. Library functions are used onl
 ## Team
  
 <!-- TODO: names (matric numbers are in the report, not needed here) -->
-[TEAM: member names]
+Pratham
+Harini
+Hari
  
 ## References
  
